@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjpgtsbxqj8o6"]
+
+[ext_resource type="PackedScene" uid="uid://bymu1o4ag4i3" path="res://Player/player.tscn" id="1_xxjse"]
+[ext_resource type="Texture2D" uid="uid://csxsgawu3rrl4" path="res://icon.svg" id="2_gltt8"]
+[ext_resource type="PackedScene" uid="uid://jpyxeopx4mti" path="res://Movable Objects/Crate/crate.tscn" id="3_qittv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxjse"]
+size = Vector2(1153, 27)
+
+[node name="TempScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xxjse")]
+position = Vector2(150, 195)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(229.5, 217.5)
+shape = SubResource("RectangleShape2D_xxjse")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(229.625, 217)
+scale = Vector2(9.00586, 0.210938)
+texture = ExtResource("2_gltt8")
+
+[node name="Crate" parent="." groups=["time_objects"] instance=ExtResource("3_qittv")]
+position = Vector2(231, 181)

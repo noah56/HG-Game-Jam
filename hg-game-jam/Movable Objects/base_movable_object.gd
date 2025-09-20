@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name BaseMovableObject
 
 const TimeBuffer = preload("res://Time Buffer/time_buffer.gd")
-@export var buffer_size := 500 # ~30 seconds if you record at 60fps
+@export var buffer_size := 1800 # ~30 seconds if you record at 60fps
 @export var rewind_speed := 1.0 # 1.0 = real-time rewind
 
 var time_buffer: TimeBuffer

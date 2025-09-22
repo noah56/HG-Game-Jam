@@ -12,20 +12,11 @@ height = 2.31145
 [node name="morgan" instance=ExtResource("1_xvw3t")]
 script = ExtResource("2_lgkcm")
 
-[node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(-0.290445, 5.41428, 0)
-bones/2/position = Vector3(0.290445, 1.0252, -4.3856e-08)
-bones/2/rotation = Quaternion(0, -0.707107, 0, 0.707107)
-bones/5/position = Vector3(0, 1.11915, 0)
-
 [node name="MorganHead" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47035e-07, 0.045846, 0)
-
-[node name="MorganHead" parent="Armature/Skeleton3D/MorganHead" index="0"]
-blend_shapes/blinky = 0.181257
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621704, 0)
 
 [node name="MorganBody" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47035e-07, 0.0458455, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621705, 0)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "IdleAnimation"

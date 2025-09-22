@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var launch_sound = $LaunchSound
 @onready var landing_sound = $LandingSound
 
+var idle_timer := 5.0
 var dragging := false
 var drag_start: Vector2
 var drag_current: Vector2
@@ -88,3 +89,13 @@ func _launch_from_drag():
 
 	# Convert drag vector to world velocity
 	velocity = Vector3(drag_dir.x, -drag_dir.y, 0) * drag_length * launch_strength
+
+func _process(delta: float) -> void:
+	# Randomly play the IdleAnim2 ever 5 - 10 seconds
+	idle_timer -= delta
+	if idle_timer <= 0:
+		if anim_player.has_animation("IdleAnim2"):
+			anim_player.play("IdleAnim2")
+			anim_player.queue("IdleAnimation")
+		# reset timer
+		idle_timer = randf_range(5.0, 10.0)

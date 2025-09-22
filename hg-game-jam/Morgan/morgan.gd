@@ -95,7 +95,8 @@ func _process(delta: float) -> void:
 	idle_timer -= delta
 	if idle_timer <= 0:
 		if anim_player.has_animation("IdleAnim2"):
-			anim_player.play("IdleAnim2")
-			anim_player.queue("IdleAnimation")
+			if anim_player.current_animation != "": #Don't IdleAnim2 when compressed
+				anim_player.play("IdleAnim2")
+				anim_player.queue("IdleAnimation")
 		# reset timer
 		idle_timer = randf_range(5.0, 10.0)

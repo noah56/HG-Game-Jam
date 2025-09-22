@@ -1,0 +1,1 @@
+extends BaseMovableObject3D

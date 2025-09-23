@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7y86larfsv4e"]
+
+[ext_resource type="PackedScene" uid="uid://dvecdm2ak8llh" path="res://assets/Morgan/morgan.glb" id="1_xvw3t"]
+[ext_resource type="Script" uid="uid://x2alnugbltlc" path="res://Morgan/morgan.gd" id="2_lgkcm"]
+[ext_resource type="AudioStream" uid="uid://d1hpjsm3yn25v" path="res://assets/sounds/spring/CompressSFX.wav" id="3_aveb3"]
+[ext_resource type="AudioStream" uid="uid://bjmyni2qm1ce" path="res://assets/sounds/spring/LaunchSFX2.wav" id="4_slpc6"]
+[ext_resource type="AudioStream" uid="uid://bqolc64t1d7cg" path="res://assets/sounds/spring/LandingSFX.wav" id="5_e8ghy"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t3t2s"]
+height = 2.31145
+
+[node name="morgan" instance=ExtResource("1_xvw3t")]
+script = ExtResource("2_lgkcm")
+
+[node name="MorganHead" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621704, 0)
+
+[node name="MorganBody" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.621705, 0)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "IdleAnimation"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(5.08, 0, 0, 0, 5.08, 0, 0, 0, 5.08, 0.00325394, 5.54472, -0.00351596)
+shape = SubResource("CylinderShape3D_t3t2s")
+
+[node name="CompressSound" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("3_aveb3")
+
+[node name="LaunchSound" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("4_slpc6")
+
+[node name="LandingSound" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("5_e8ghy")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt8ikaqbs5uj"]
+
+[ext_resource type="Script" uid="uid://cc7nwxpnast4p" path="res://Movable Objects/Crate3D/crate_3d.gd" id="1_6jxh2"]
+[ext_resource type="Texture2D" uid="uid://b2jeo67avcwns" path="res://assets/crate.png" id="1_i76xp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jxh2"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dew2v"]
+albedo_texture = ExtResource("1_i76xp")
+uv1_offset = Vector3(0.5, -0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_qcxrf"]
+material = SubResource("StandardMaterial3D_dew2v")
+
+[node name="RigidBody3D" type="RigidBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+script = ExtResource("1_6jxh2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6jxh2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_qcxrf")
+
+[node name="Node3D" type="Node3D" parent="."]

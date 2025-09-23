@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ll81sb5bbcyf"]
+
+[ext_resource type="Texture2D" uid="uid://csxsgawu3rrl4" path="res://icon.svg" id="1_34w1l"]
+[ext_resource type="PackedScene" uid="uid://c7y86larfsv4e" path="res://Morgan/morgan.tscn" id="2_bj2ld"]
+[ext_resource type="PackedScene" uid="uid://dt8ikaqbs5uj" path="res://Movable Objects/Crate3D/crate3D.tscn" id="4_gw2q3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dew2v"]
+size = Vector3(1.22522, 0.0351562, 1)
+
+[node name="Temp Scene" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(4.99774, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00958252, 0.0146484, 0)
+shape = SubResource("BoxShape3D_dew2v")
+
+[node name="Sprite3D" type="Sprite3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 0.0486376, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("1_34w1l")
+
+[node name="morgan" parent="." instance=ExtResource("2_bj2ld")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0035416, 0.0616234, -0.000225782)
+
+[node name="Crate" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321157, 0.151733, 0)
+
+[node name="Crate2" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.327222, 0.391598, 9.98974e-05)
+
+[node name="Crate3" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31268, 0.651187, 0)
+
+[node name="Crate4" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33628, 0.871052, 0)
+
+[node name="Crate5" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330088, 1.11625, 0)
+
+[node name="Crate6" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321449, 1.33708, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062351, 0.666263, 1.87223)
+size = 3.0

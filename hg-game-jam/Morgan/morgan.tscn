@@ -10,6 +10,9 @@
 height = 2.31145
 
 [node name="morgan" instance=ExtResource("1_xvw3t")]
+collision_layer = 3
+collision_mask = 3
+axis_lock_linear_z = true
 script = ExtResource("2_lgkcm")
 
 [node name="MorganHead" parent="Armature/Skeleton3D" index="0"]

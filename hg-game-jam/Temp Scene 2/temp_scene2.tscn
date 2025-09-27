@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ll81sb5bbcyf"]
+[gd_scene load_steps=6 format=3 uid="uid://ll81sb5bbcyf"]
 
 [ext_resource type="Texture2D" uid="uid://csxsgawu3rrl4" path="res://icon.svg" id="1_34w1l"]
 [ext_resource type="PackedScene" uid="uid://c7y86larfsv4e" path="res://Morgan/morgan.tscn" id="2_bj2ld"]
+[ext_resource type="PackedScene" uid="uid://bm85qdkh1c5yr" path="res://Laser/laser.tscn" id="4_34w1l"]
 [ext_resource type="PackedScene" uid="uid://dt8ikaqbs5uj" path="res://Movable Objects/Crate3D/crate3D.tscn" id="4_gw2q3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dew2v"]
@@ -23,24 +24,34 @@ texture = ExtResource("1_34w1l")
 [node name="morgan" parent="." instance=ExtResource("2_bj2ld")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0035416, 0.0616234, -0.000225782)
 
-[node name="Crate" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321157, 0.151733, 0)
-
-[node name="Crate2" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.327222, 0.391598, 9.98974e-05)
-
-[node name="Crate3" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31268, 0.651187, 0)
-
-[node name="Crate4" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33628, 0.871052, 0)
-
-[node name="Crate5" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330088, 1.11625, 0)
-
-[node name="Crate6" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321449, 1.33708, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062351, 0.666263, 1.87223)
 size = 3.0
+
+[node name="Laser" parent="." instance=ExtResource("4_34w1l")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.18941, 1.29186, 0)
+target_position = Vector3(0, -100, 0)
+
+[node name="Crate" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 0.15, 0)
+
+[node name="Crate2" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 0.35, 0)
+
+[node name="Crate3" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 0.55, 0)
+
+[node name="Crate4" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 0.75, 0)
+
+[node name="Crate5" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 0.95, 0)
+
+[node name="Crate6" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 1.15, 0)
+
+[node name="Crate7" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 1.4, 0)
+
+[node name="Crate8" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 1.6, 0)

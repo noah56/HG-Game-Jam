@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody3D:
 			c.get_collider().apply_impulse(-c.get_normal() * 2)
-			
+		
 	# Rewind input
 	if Input.is_action_pressed("rewind_time"):
 		for obj in get_tree().get_nodes_in_group("time_objects"):

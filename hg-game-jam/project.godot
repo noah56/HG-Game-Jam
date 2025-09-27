@@ -15,6 +15,10 @@ run/main_scene="uid://ll81sb5bbcyf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 time_objects=""

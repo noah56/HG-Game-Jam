@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b2jeo67avcwns" path="res://assets/crate.png" id="1_i76xp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jxh2"]
-size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dew2v"]
 albedo_texture = ExtResource("1_i76xp")
@@ -24,7 +23,6 @@ script = ExtResource("1_6jxh2")
 shape = SubResource("BoxShape3D_6jxh2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("BoxMesh_qcxrf")
 
 [node name="Node3D" type="Node3D" parent="."]

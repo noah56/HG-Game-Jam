@@ -40,7 +40,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 19, 18
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 0)
 
 [node name="Laser2" parent="." instance=ExtResource("3_fbld2")]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.189409, 0.890242, 0)
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.189409, 0.205165, 0)
 target_position = Vector3(0, -50, 0)
 
 [node name="Laser" parent="." instance=ExtResource("3_fbld2")]

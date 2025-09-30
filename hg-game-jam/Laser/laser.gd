@@ -7,8 +7,14 @@ var last_length := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	var collision = CylinderShape3D.new()
+	var mesh = CylinderMesh.new()
+	collision_shape.shape = collision
+	beam_mesh.mesh = mesh
+	
+	collision_shape.shape.radius = 0.02
+	beam_mesh.mesh.top_radius = 0.01
+	beam_mesh.mesh.bottom_radius = 0.01
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,32 +1,107 @@
-[gd_scene load_steps=6 format=3 uid="uid://ll81sb5bbcyf"]
+[gd_scene load_steps=9 format=3 uid="uid://ll81sb5bbcyf"]
 
-[ext_resource type="Texture2D" uid="uid://csxsgawu3rrl4" path="res://icon.svg" id="1_34w1l"]
 [ext_resource type="PackedScene" uid="uid://c7y86larfsv4e" path="res://Morgan/morgan.tscn" id="2_bj2ld"]
+[ext_resource type="Texture2D" uid="uid://ly1gjcwjf4dg" path="res://itemPNGs/craftpix-901125-free-post-apocalyptic-pixel-art-game-backgrounds/PNG/Postapocalypce4/Bright/halffloor&underfloor.png" id="2_gw2q3"]
 [ext_resource type="PackedScene" uid="uid://bm85qdkh1c5yr" path="res://Laser/laser.tscn" id="4_34w1l"]
 [ext_resource type="PackedScene" uid="uid://dt8ikaqbs5uj" path="res://Movable Objects/Crate3D/crate3D.tscn" id="4_gw2q3"]
+[ext_resource type="Texture2D" uid="uid://bv4ouv3t1xjcf" path="res://itemPNGs/craftpix-901125-free-post-apocalyptic-pixel-art-game-backgrounds/PNG/Postapocalypce4/Bright/postapocalypse4.png" id="5_bj2ld"]
+
+[sub_resource type="Environment" id="Environment_bj2ld"]
+background_mode = 3
+background_canvas_max_layer = -1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dew2v"]
 size = Vector3(1.22522, 0.0351562, 1)
 
+[sub_resource type="Environment" id="Environment_34w1l"]
+background_mode = 3
+background_canvas_max_layer = -1
+
 [node name="Temp Scene" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bj2ld")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="BGImage" type="TextureRect" parent="WorldEnvironment/CanvasLayer"]
+auto_translate_mode = 1
+z_index = -1
+z_as_relative = false
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("5_bj2ld")
+expand_mode = 3
+
+[node name="LeftLight" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.35396, 1.72973, 0)
+
+[node name="RightLight" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.24504, 1.72973, 0)
+
+[node name="FrontLight" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0.00668764, 1.72973, 1.61878)
+
+[node name="BackLigth" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 0.00668764, 1.72973, -2.57447)
+
+[node name="TopLight" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-1, 0, 2.62268e-07, 2.62268e-07, -4.37114e-08, 1, 1.14641e-14, 1, 4.37114e-08, 0.00668764, 3.63998, 0.0726194)
+
+[node name="BottomLight" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-1, 0, 2.62268e-07, -2.62268e-07, -4.37114e-08, -1, 1.14641e-14, -1, 4.37114e-08, 0.00668764, -1.62754, 0.0726194)
+
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(4.99774, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(4.99774, 0, 0, 0, 1, 0, 0, 0, 1, -0.00110352, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00958252, 0.0146484, 0)
 shape = SubResource("BoxShape3D_dew2v")
 
-[node name="Sprite3D" type="Sprite3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 0.0486376, 0, 0, 0, 1, 0, 0, 0)
-texture = ExtResource("1_34w1l")
+[node name="FrontSprite" type="Sprite3D" parent="Floor"]
+transform = Transform3D(0.127431, 0, 0, 0, 0.504336, 0, 0, 0, 1.03932, 0.00717099, -0.183764, 0.501884)
+flip_h = true
+texture = ExtResource("2_gw2q3")
+region_enabled = true
+region_rect = Rect2(-4, 65, 967, 91)
+
+[node name="FrontCapSprite" type="Sprite3D" parent="Floor"]
+transform = Transform3D(-5.24868e-09, 0, 1.03932, 0, 0.423489, 0, -0.120076, 0, -4.54302e-08, -0.604833, -0.183764, -0.0847839)
+flip_h = true
+texture = ExtResource("2_gw2q3")
+region_enabled = true
+region_rect = Rect2(-4, 65, 967, 91)
+
+[node name="BackCapSprite" type="Sprite3D" parent="Floor"]
+transform = Transform3D(-5.24868e-09, 0, 1.03932, 0, 0.423489, 0, -0.120076, 0, -4.54302e-08, 0.616094, -0.183764, -0.0847839)
+flip_h = true
+texture = ExtResource("2_gw2q3")
+region_enabled = true
+region_rect = Rect2(-4, 65, 967, 91)
+
+[node name="TopSprite" type="Sprite3D" parent="Floor"]
+transform = Transform3D(0.127431, 0, 0, 0, 0.0504933, 0, 0, 0, 1.11478, 0.00717099, 0.0305265, -0.0930167)
+flip_h = true
+axis = 1
+texture = ExtResource("2_gw2q3")
+region_enabled = true
+region_rect = Rect2(-4, 56, 967, 111)
+
+[node name="Bottom Sprite" type="Sprite3D" parent="Floor"]
+transform = Transform3D(0.127431, 0, 0, 0, 0.0504933, 0, 0, 0, 1.11478, 0.00717099, -0.381979, -0.0928052)
+flip_h = true
+axis = 1
+texture = ExtResource("2_gw2q3")
+region_enabled = true
+region_rect = Rect2(-4, 56, 967, 111)
 
 [node name="morgan" parent="." instance=ExtResource("2_bj2ld")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0035416, 0.0616234, -0.000225782)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062351, 0.666263, 1.87223)
-size = 3.0
 
 [node name="Laser" parent="." instance=ExtResource("4_34w1l")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.18941, 1.29186, 0)
@@ -55,3 +130,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 1.4, 0)
 
 [node name="Crate8" parent="." groups=["time_objects"] instance=ExtResource("4_gw2q3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062351, 0.666263, 1.87223)
+environment = SubResource("Environment_34w1l")
+size = 3.0
